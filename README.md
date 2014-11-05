@@ -98,19 +98,24 @@ then run hubot with the adapter.
 Where `<adapter>` is the name of your adapter without the `hubot-` prefix.
 
 [hubot-adapters]: https://github.com/github/hubot/blob/master/docs/adapters.md
+
 fennecbot
 =========
+
+### Installation
 
 ```
 docker build -t fenneclab/fennecbot .
 ```
 
+### Run
+
 ```
-docker run -e HUBOT_SLACK_TOKEN="PKr6T3Agnli1hJUukTa2MRqC" \
+docker run -e HUBOT_SLACK_TOKEN="***" \
   -e HUBOT_SLACK_TEAM="fenneclab" \
   -e HUBOT_SLACK_BOTNAME="fennec.bot" \
-  -e HUBOT_NAME="@fennec.bot" \
   -e PORT=9999 \
   -d -p 9999:9999 \
+  -v "$(pwd)":/bot \
   fenneclab/fennecbot
 ```

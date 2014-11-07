@@ -112,7 +112,7 @@ docker build -t fenneclab/fennecbot .
 
 ```
 docker run -e HUBOT_SLACK_TOKEN="***" \
-  -e HUBOT_SLACK_TEAM="fenneclab" \
+  -e HUBOT_SLACK_TEAM="***" \
   -e HUBOT_SLACK_BOTNAME="fennec.bot" \
   -e PORT=9999 \
   -d -p 9999:9999 \

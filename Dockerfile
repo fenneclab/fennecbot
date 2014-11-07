@@ -1,9 +1,11 @@
 FROM node:latest
 
-RUN mkdir /bot
+RUN mkdir /bot && cd /bot
 
 ADD . /bot
 
 EXPOSE 9999
 
-CMD cd /bot; bin/hubot --adapter slack
+WORKDIR /bot
+
+CMD ["bin/hubot", "--adapter", "slack"]

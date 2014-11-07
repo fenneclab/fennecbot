@@ -13,7 +13,8 @@
     "hubot-redis-brain": "0.0.2",
     "hubot-scripts": "^2.5.16",
     "hubot-slack": "^2.2.0",
-    "hubot-youtube": "^0.1.2"
+    "hubot-youtube": "^0.1.2",
+    "request": "^2.47.0"
   },
   "engines": {
     "node": "0.10.x"

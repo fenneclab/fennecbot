@@ -1,6 +1,6 @@
 [
   "hubot-help",
-  "hubot-google-images",
   "hubot-google-translate",
-  "hubot-youtube"
+  "hubot-youtube",
+  "hubot-thecat"
 ]

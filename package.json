@@ -1,23 +1,23 @@
 {
   "name": "fennecbot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "author": "satoshun00 <shun.sato@fenneclab.com>",
   "description": "Hubot for FennecLab",
   "dependencies": {
     "hubot": "^2.9.3",
     "hubot-google-images": "^0.1.0",
-    "hubot-google-translate": "^0.1.0",
+    "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
-    "hubot-redis-brain": "0.0.2",
+    "hubot-redis-brain": "0.0.3",
     "hubot-scripts": "^2.5.16",
-    "hubot-slack": "^2.2.0",
+    "hubot-slack": "^3.3.0",
     "hubot-thecat": "^1.0.1",
-    "hubot-youtube": "^0.1.2",
+    "hubot-youtube": "^1.0.1",
     "request": "^2.47.0"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "0.12.x"
   }
 }

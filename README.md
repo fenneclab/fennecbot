@@ -27,3 +27,8 @@ docker run -v "$(pwd)":/bot \
   fenneclab/fennecbot \
   bin/hubot
 ```
+
+### Deploy
+```
+git push heroku master
+```

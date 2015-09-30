@@ -15,7 +15,8 @@
     "hubot-slack": "^3.3.0",
     "hubot-thecat": "^1.0.1",
     "hubot-youtube": "^1.0.1",
-    "request": "^2.47.0"
+    "request": "^2.47.0",
+    "shortid": "^2.2.2"
   },
   "engines": {
     "node": "0.12.x"

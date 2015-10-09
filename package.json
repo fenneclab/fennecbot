@@ -14,6 +14,7 @@
     "hubot-scripts": "^2.5.16",
     "hubot-slack": "^3.3.0",
     "hubot-thecat": "^1.0.1",
+    "hubot-trello": "^0.1.1",
     "hubot-youtube": "^1.0.1",
     "request": "^2.47.0",
     "shortid": "^2.2.2"

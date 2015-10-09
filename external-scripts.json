@@ -2,5 +2,6 @@
   "hubot-help",
   "hubot-google-translate",
   "hubot-youtube",
-  "hubot-thecat"
+  "hubot-thecat",
+  "hubot-trello"
 ]

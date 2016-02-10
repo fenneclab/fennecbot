@@ -9,26 +9,36 @@ docker build -t fenneclab/fennecbot .
 ### Run
 
 ```
-docker run -e HUBOT_SLACK_TOKEN="${HUBOT_SLACK_TOKEN}" \
+source ./.env; docker run -e HUBOT_SLACK_TOKEN="${HUBOT_SLACK_TOKEN}" \
   -e HUBOT_SLACK_TEAM="${HUBOT_SLACK_TEAM}" \
   -e HUBOT_SLACK_BOTNAME="${HUBOT_SLACK_BOTNAME}" \
+  -e HUBOT_TRELLO_BOARD="${HUBOT_TRELLO_BOARD}" \
+  -e HUBOT_TRELLO_KEY="${HUBOT_TRELLO_KEY}" \
+  -e HUBOT_TRELLO_TOKEN="${HUBOT_TRELLO_TOKEN}" \
+  -e HUBOT_KANE_FORM_ID="${HUBOT_KANE_FORM_ID}" \
   -e PORT=9999 \
-  -e HUBOT_REDMINE_BASE_URL="${HUBOT_REDMINE_BASE_URL}" \
-  -e HUBOT_REDMINE_TOKEN="${HUBOT_REDMINE_TOKEN}" \
   -d -p 9999:9999 \
   -v "$(pwd)":/bot \
   fenneclab/fennecbot
 
 # or shell mode
-docker run -v "$(pwd)":/bot \
+source ./.env; docker run -v "$(pwd)":/bot \
+  -e HUBOT_TRELLO_BOARD="${HUBOT_TRELLO_BOARD}" \
+  -e HUBOT_TRELLO_KEY="${HUBOT_TRELLO_KEY}" \
+  -e HUBOT_TRELLO_TOKEN="${HUBOT_TRELLO_TOKEN}" \
+  -e HUBOT_KANE_FORM_ID="${HUBOT_KANE_FORM_ID}" \
   -it -p 9999:9999 \
-  -e HUBOT_REDMINE_TOKEN="${HUBOT_REDMINE_TOKEN}" \
-  -e HUBOT_REDMINE_BASE_URL="${HUBOT_REDMINE_BASE_URL}" \
   fenneclab/fennecbot \
   bin/hubot
+
+# or
+source ./.env; bin/hubot
 ```
 
 ### Deploy
 ```
+# check config
+heroku config
+
 git push heroku master
 ```

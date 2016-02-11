@@ -2,7 +2,7 @@
 #   経費を入力する
 #
 # Commands:
-#   hubot 金 <項目> <金額> <支払先> - 経費を入力します
+#   hubot 金 <項目> <金額> <支払先> - 経費を入力します(項目は 飯|移動|備品|その他)
 #
 # Configuration:
 #   HUBOT_KANE_FORM_ID
@@ -19,7 +19,7 @@
 # entry.348480466 (利用者)
 
 KOUMOKUS_MAP = {
-  '食事': '食事代・お歳暮・パーティ',
+  '飯': '食事代・お歳暮・パーティ',
   '移動': '電車・バス・タクシー・航空券',
   '備品': '備品・パソコン・文房具・名刺',
   'その他': 'その他'
@@ -33,8 +33,8 @@ module.exports = (robot) ->
     kingaku = msg.match[2]
     mise = msg.match[3]
     now = new Date
-    user = if msg?.user?.name is 'satoshun00' then 'しゅん' else 'なるせ'
-    return msg.send "<項目>は #{Object.keys(KOUMOKUS_MAP).join(',')} から選んでね =͟͟͞͞((☞ ՞ਊ ՞)☞" if koumoku not in Object.keys(KOUMOKUS_MAP)
+    user = if msg?.message?.user?.name is 'satoshun00' then 'しゅん' else 'なるせ'
+    return msg.send "<項目>は #{Object.keys(KOUMOKUS_MAP).join('|')} から選んでね =͟͟͞͞((☞ ՞ਊ ՞)☞" if koumoku not in Object.keys(KOUMOKUS_MAP)
     return msg.send '<金額>は数字だよ =͟͟͞͞((☞ ՞ਊ ՞)☞' if !/^\d+$/.test(kingaku)
     return msg.send '<支払先>を指定してね =͟͟͞͞((☞ ՞ਊ ՞)☞' if !mise?
     data = "entry.1082370069_year=#{now.getFullYear()}&entry.1082370069_month=#{now.getMonth()}&entry.1082370069_day=#{now.getDate()}&entry.401103785=#{encodeURIComponent(mise)}&entry.1824584658=#{encodeURIComponent(KOUMOKUS_MAP[koumoku])}&entry.864989227=#{kingaku}&entry.348480466=#{encodeURIComponent(user)}"
